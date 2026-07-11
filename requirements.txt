@@ -1,0 +1,4 @@
+requests
+RPLCD
+smbus2
+lgpio

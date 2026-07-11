@@ -1,0 +1,46 @@
+Rocket Launch Display System — Update Log
+Created by Matthew Sarvas
+==========================================
+
+launch_display_fetcher.py
+--------------------------
+
+Version 1.0.0 — June 25, 2026
+- Initial release
+- Fetches 20 upcoming launches from Launch Library 2 API
+- Pushes launch data as launches.json to launch-display-private GitHub repo
+- Drives 6 I2C LCD displays showing the next 3 launches
+- Three 16x2 LCDs show launch site and country
+- Three 20x4 LCDs show mission name, rocket, date, and time in PST/PDT
+- Anonymous API access with 6 minute refresh interval
+- Optional API key support for 60 second refresh interval
+- Physical button on GPIO27 to toggle between all launches and Vandenberg only
+- 3 second button hold required to confirm update installation
+- Live countdown timer on displays when API rate limit is reached
+- Automatically checks GitHub for updates every 24 hours
+- Automatically runs on boot via systemd
+
+
+launch_display_follower.py
+--------------------------
+
+Version 1.0.0 — June 25, 2026
+- Initial release
+- Reads launch data from launch-display-private GitHub repo (launches.json)
+- Falls back to Launch Library 2 API if GitHub data is unavailable
+- Drives 6 I2C LCD displays showing the next 3 launches
+- Three 16x2 LCDs show launch site and country
+- Three 20x4 LCDs show mission name, rocket, date, and time in PST/PDT
+- Automatic PST/PDT timezone conversion
+- Fetches 20 launches into local cache — button filtering uses cache, no API call
+- Physical button on GPIO27 to toggle between all launches and Vandenberg only
+- Button uses lgpio for reliable detection on modern Raspberry Pi OS
+- 3 second button hold required to confirm update installation
+- 1 second software debounce prevents accidental double toggles
+- Live countdown timer on displays when API rate limit is reached
+- Descriptive error messages for no internet, rate limits, and empty data
+- Specific message when Vandenberg filter finds no launches in cache
+- Automatically checks GitHub for updates every 24 hours
+- User confirmation required before installing any update
+- Automatically runs on boot via systemd
+- Automatically restarts if the script crashes
