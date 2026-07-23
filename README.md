@@ -85,10 +85,10 @@ i2cdetect -y 1
 
 ```bash
 cd /home/YOUR_USERNAME
-mkdir launch-display-private
-cd launch-display-private
-wget https://raw.githubusercontent.com/mbsarvas/launch-display-private/main/launch_display_follower.py
-wget https://raw.githubusercontent.com/mbsarvas/launch-display-private/main/requirements.txt
+mkdir launch-display
+cd launch-display
+wget https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/launch_display_follower.py
+wget https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/requirements.txt
 ```
 
 ### 4. Set your username in the script
@@ -134,7 +134,7 @@ Wants=network-online.target
 Type=simple
 User=YOUR_USERNAME
 WorkingDirectory=/home/YOUR_USERNAME/launch-display-private
-ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/launch-display-private/launch_display_follower.py
+ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/launch-display/launch_display_follower.py
 Restart=always
 RestartSec=10
 
@@ -162,10 +162,10 @@ But download `launch_display_fetcher.py` instead:
 
 ```bash
 cd /home/YOUR_USERNAME
-mkdir launch-display-private
-cd launch-display-private
-wget https://raw.githubusercontent.com/mbsarvas/launch-display-private/main/launch_display_fetcher.py
-wget https://raw.githubusercontent.com/mbsarvas/launch-display-private/main/requirements.txt
+mkdir launch-display
+cd launch-display
+wget https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/launch_display_fetcher.py
+wget https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/requirements.txt
 ```
 
 ### 6. Generate a GitHub personal access token
@@ -220,7 +220,7 @@ Wants=network-online.target
 Type=simple
 User=YOUR_USERNAME
 WorkingDirectory=/home/YOUR_USERNAME/launch-display-private
-ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/launch-display-private/launch_display_fetcher.py
+ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/launch-display/launch_display_fetcher.py
 Restart=always
 RestartSec=10
 
