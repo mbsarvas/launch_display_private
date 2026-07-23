@@ -23,9 +23,9 @@ If you use **Raspberry Pi Imager** to flash your SD card, it will prompt you to 
 
 ---
 
-## Hardware (same for all Pis)
+## Hardware
 
-- Raspberry Pi Zero 2 W
+- Raspberry Pi Zero 2 W or Zero W
 - 3x 16x2 I2C LCD displays (PCF8574 backpack)
 - 3x 20x4 I2C LCD displays (PCF8574 backpack)
 - 1x momentary push button
@@ -33,7 +33,7 @@ If you use **Raspberry Pi Imager** to flash your SD card, it will prompt you to 
 
 ---
 
-## Wiring (same for all Pis)
+## Wiring
 
 ### I2C LCD Displays
 
