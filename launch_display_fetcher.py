@@ -1,6 +1,6 @@
 """
 Rocket Launch Tracker — Fetcher + Display Edition
-Raspberry Pi Zero 2 W | Python 3.13
+Raspberry Pi Zero 2 W or Zero W | Python 3.13
 Version 1.0.0
 Date: June 25, 2026
 Created by Matthew Sarvas
@@ -92,15 +92,15 @@ BUTTON_PIN            = 27
 # !! UPDATE THESE to match your setup !!
 PI_USER          = "pi"
 GITHUB_USERNAME  = "mbsarvas"
-GITHUB_DATA_REPO = "launch-display-private"
+GITHUB_DATA_REPO = "launch-display-alternate"
 GITHUB_DATA_FILE = "launches.json"
 GITHUB_TOKEN_FILE = f"/home/{PI_USER}/github_token.txt"
 API_KEY_FILE      = f"/home/{PI_USER}/ll2_api_key.txt"
-SCRIPT_PATH       = f"/home/{PI_USER}/launch-display-private/launch_display_fetcher.py"
+SCRIPT_PATH       = f"/home/{PI_USER}/launch-display/launch_display_fetcher.py"
 
 # ── Auto-update settings ──────────────────────────────────────────────────────
 SCRIPT_VERSION  = "1.0.0"
-GITHUB_RAW_URL  = "https://raw.githubusercontent.com/mbsarvas/launch-display-private/main/launch_display_fetcher.py"
+GITHUB_RAW_URL  = "https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/launch_display_fetcher.py"
 UPDATE_INTERVAL = 86400   # 24 hours
 
 
