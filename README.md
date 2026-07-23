@@ -133,7 +133,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 User=YOUR_USERNAME
-WorkingDirectory=/home/YOUR_USERNAME/launch-display-private
+WorkingDirectory=/home/YOUR_USERNAME/launch-display
 ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/launch-display/launch_display_follower.py
 Restart=always
 RestartSec=10
@@ -219,7 +219,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 User=YOUR_USERNAME
-WorkingDirectory=/home/YOUR_USERNAME/launch-display-private
+WorkingDirectory=/home/YOUR_USERNAME/launch-display
 ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/launch-display/launch_display_fetcher.py
 Restart=always
 RestartSec=10
