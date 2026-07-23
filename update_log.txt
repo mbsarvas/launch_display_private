@@ -5,10 +5,17 @@ Created by Matthew Sarvas
 launch_display_fetcher.py
 --------------------------
 
+Version 1.0.1 — July 23, 2026
+- PI_USER is now detected automatically from the system — no manual username edit needed
+- Added SCRIPT_SUBDIR constant for users who install in a differently named folder
+- Repo renamed from launch-display-private to launch-display-alternate
+- Updated all internal GitHub URLs to reflect new repo name
+
+
 Version 1.0.0 — June 25, 2026
 - Initial release
 - Fetches 20 upcoming launches from Launch Library 2 API
-- Pushes launch data as launches.json to launch-display-private GitHub repo
+- Pushes launch data as launches.json to launch-display-alternate GitHub repo
 - Drives 6 I2C LCD displays showing the next 3 launches
 - Three 16x2 LCDs show launch site and country
 - Three 20x4 LCDs show mission name, rocket, date, and time in PST/PDT
@@ -24,9 +31,16 @@ Version 1.0.0 — June 25, 2026
 launch_display_follower.py
 --------------------------
 
+Version 1.0.1 — July 23, 2026
+- PI_USER is now detected automatically from the system — no manual username edit needed
+- Added SCRIPT_SUBDIR constant for users who install in a differently named folder
+- Repo renamed from launch-display-private to launch-display-alternate
+- Updated all internal GitHub URLs to reflect new repo name
+
+
 Version 1.0.0 — June 25, 2026
 - Initial release
-- Reads launch data from launch-display-private GitHub repo (launches.json)
+- Reads launch data from launch-display-alternate GitHub repo (launches.json)
 - Falls back to Launch Library 2 API if GitHub data is unavailable
 - Drives 6 I2C LCD displays showing the next 3 launches
 - Three 16x2 LCDs show launch site and country

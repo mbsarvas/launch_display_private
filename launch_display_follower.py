@@ -83,14 +83,16 @@ REFRESH_INTERVAL_AUTH = 60   # authenticated: 60 req/hour → 1 per 60s
 BUTTON_PIN       = 27    # GPIO pin for the Vandenberg filter toggle button
 
 # ── User configuration ─────────────────────────────────────────────────────────
-# !! UPDATE THIS to match your Pi's username !!
-# e.g. if your username is "pi", set PI_USER = "pi"
-PI_USER          = "pi"
+# PI_USER is detected automatically from the current system user — no manual edit needed.
+# Only change SCRIPT_SUBDIR if you installed the script in a different folder name.
+import os as _os
+PI_USER          = _os.environ.get("USER") or _os.environ.get("LOGNAME") or "pi"
+SCRIPT_SUBDIR    = "launch-display"   # folder the script lives in
 API_KEY_FILE     = f"/home/{PI_USER}/ll2_api_key.txt"
-SCRIPT_PATH      = f"/home/{PI_USER}/launch-display/launch_display_follower.py"
+SCRIPT_PATH      = f"/home/{PI_USER}/{SCRIPT_SUBDIR}/launch_display_follower.py"
 
 # ── Auto-update settings ───────────────────────────────────────────────────────
-SCRIPT_VERSION   = "1.0.0"
+SCRIPT_VERSION   = "1.0.1"
 GITHUB_RAW_URL   = "https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/launch_display_follower.py"
 UPDATE_INTERVAL  = 86400   # seconds between update checks (86400 = 24 hours)
 GITHUB_DATA_URL  = "https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/launches.json"

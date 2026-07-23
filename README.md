@@ -1,4 +1,4 @@
-# 🚀 Rocket Launch Display System — Private
+# 🚀 Rocket Launch Display System — Alternate
 
 A unique deployment of the Rocket Launch Display System designed for a specific case
 
@@ -91,33 +91,19 @@ wget https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/la
 wget https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/requirements.txt
 ```
 
-### 4. Set your username in the script
-
-```bash
-nano launch_display_follower.py
-```
-
-Update this line:
-
-```python
-PI_USER = "pi"   # change to your username
-```
-
-Save and exit with `Ctrl+X`, then `Y`, then `Enter`.
-
-### 5. Install dependencies
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt --break-system-packages
 ```
 
-### 6. Test the script
+### 5. Test the script
 
 ```bash
 python3 launch_display_follower.py
 ```
 
-### 7. Autostart on boot
+### 6. Autostart on boot
 
 ```bash
 sudo nano /etc/systemd/system/launchfollower.service
@@ -180,22 +166,7 @@ wget https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/re
 echo "your_token_here" > /home/YOUR_USERNAME/github_token.txt
 ```
 
-### 7. Set your username and GitHub details in the fetcher script
-
-```bash
-nano launch_display_fetcher.py
-```
-
-Update these lines:
-
-```python
-PI_USER          = "pi"        # your Pi username
-GITHUB_USERNAME  = "mbsarvas"  # your GitHub username
-```
-
-Save and exit with `Ctrl+X`, then `Y`, then `Enter`.
-
-### 8. Test the fetcher script
+### 7. Test the fetcher script
 
 ```bash
 python3 launch_display_fetcher.py
@@ -203,7 +174,7 @@ python3 launch_display_fetcher.py
 
 On first run it will fetch launch data, push `launches.json` to this repository, and update the displays.
 
-### 9. Autostart on boot
+### 8. Autostart on boot
 
 ```bash
 sudo nano /etc/systemd/system/rocketfetcher.service

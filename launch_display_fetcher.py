@@ -33,7 +33,7 @@ Setup:
     1. Create a GitHub personal access token with repo write permissions
     2. Save it to ~/github_token.txt
     3. Create a new public GitHub repo called launch_display_data
-    4. Set PI_USER and GITHUB_USERNAME below
+    4. Run: python3 launch_display_fetcher.py
     5. Run: python3 launch_display_fetcher.py
 """
 
@@ -89,17 +89,20 @@ REFRESH_INTERVAL_AUTH = 60    # authenticated: 60 req/hour → 1 per 60s
 BUTTON_PIN            = 27
 
 # ── User configuration ────────────────────────────────────────────────────────
-# !! UPDATE THESE to match your setup !!
-PI_USER          = "pi"
-GITHUB_USERNAME  = "mbsarvas"
-GITHUB_DATA_REPO = "launch-display-alternate"
-GITHUB_DATA_FILE = "launches.json"
+# PI_USER is detected automatically from the current system user — no manual edit needed.
+# Only change SCRIPT_SUBDIR if you installed the script in a different folder name.
+import os as _os
+PI_USER           = _os.environ.get("USER") or _os.environ.get("LOGNAME") or "pi"
+SCRIPT_SUBDIR     = "launch-display"   # folder the script lives in
+GITHUB_USERNAME   = "mbsarvas"
+GITHUB_DATA_REPO  = "launch-display-alternate"
+GITHUB_DATA_FILE  = "launches.json"
 GITHUB_TOKEN_FILE = f"/home/{PI_USER}/github_token.txt"
 API_KEY_FILE      = f"/home/{PI_USER}/ll2_api_key.txt"
-SCRIPT_PATH       = f"/home/{PI_USER}/launch-display/launch_display_fetcher.py"
+SCRIPT_PATH       = f"/home/{PI_USER}/{SCRIPT_SUBDIR}/launch_display_fetcher.py"
 
 # ── Auto-update settings ──────────────────────────────────────────────────────
-SCRIPT_VERSION  = "1.0.0"
+SCRIPT_VERSION  = "1.0.1"
 GITHUB_RAW_URL  = "https://raw.githubusercontent.com/mbsarvas/launch-display-alternate/main/launch_display_fetcher.py"
 UPDATE_INTERVAL = 86400   # 24 hours
 
